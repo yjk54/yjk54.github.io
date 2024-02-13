@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Cursive';
+			background-color:#FFF7F8;
+            color: #FF9494;
+        }
+        #valentineQuestion {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .answerButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'courier';
+            margin-bottom: 20px;
+            background-color:#FFE3E1;
+            color: #e67373;
+            border-radius: 12px;
+        }
+            #yesButton {
+                background-color: #C4DEA4;
+                color: #FFF8E7;
+                border: 2px solid #C4DEA4;
+
+            }
+            #noButton {
+                background-color: #60100B;
+                color: #e67373;
+                border: 2px solid #60100B;
+
+            }
+            #adrien {
+                max-width: 400px; 
+                height: auto; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="valentineQuestion"><b>Adrien Pineau, will you be my valentine?</b></div>
+        <button id="yesButton" class="answerButton" onclick="location.href='thanku.html'">Yes</button>
+        <button id="noButton" class="answerButton">No</button>
+        <br>
+        <img src='adrien.jpeg' id="adrien" alt='adrien polaroid' class="responsive">
+    
+        <script>
+            document.getElementById('noButton').addEventListener('click', function() {
+                var yesButton = document.querySelector('button[onclick*="thanku.html"]');
+                var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+                yesButton.style.fontSize = (currentFontSize + 10) + 'px'; // Increase font size by 5px
+            });
+        </script>
+    </body>
